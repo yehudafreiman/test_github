@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: streamlit
+  labels:
+    app: streamlit
+spec:
+  containers:
+  - name: streamlit
+    image: yehudafreiman/streamlit:v1
+    imagePullPolicy: Always
+    ports:
+      - containerPort: 8080
+
+
+
