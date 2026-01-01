@@ -1,0 +1,88 @@
+קובץ דוקר
+git checkout -b dockerfile
+git push -u origin dockerfile
+touch DOCKERFILE.md
+mkdir streamlit_minikube_app
+cd streamlit_minikube_app
+touch Dockerfile main.py requirements.txt
+העתקת תוכן אפליקציה לקבצים הרלוונטיים
+cd ..
+git add streamlit_minikube_app DOCKERFILE.md
+git commit -m "Implement Dockerfile and app files"
+git push origin dockerfile
+cd streamlit_minikube_app
+
+בנייה
+docker build -t yehudafreiman/streamlit:v1 .
+docker run -d -p 8090:8080 yehudafreiman/streamlit:v1
+docker ps
+docker push yehudafreiman/streamlit:v1
+cd ..
+
+פוד
+git checkout -b pod
+git push -u origin pod
+touch pod.yaml POD.md
+git add pod.yaml POD.md
+git commit -m "Implement pod.yaml"
+git push origin pod
+
+סרוויס
+git checkout -b service
+git push -u origin service
+touch service.yaml SERVICE.md
+git add service.yaml SERVICE.md
+git commit -m "Implement service.yaml"
+git push origin service
+
+הכנת הסביבה
+minikube start
+minikube status
+
+הרצת האפליקציה
+kubectl apply -f pod.yaml
+kubectl apply -f service.yaml
+
+בדיקה
+kubectl get pods
+kubectl get services
+
+גישה
+minikube service streamlit-service --url
+
+ניקוי וסיום
+kubectl delete -f pod.yaml
+kubectl delete -f service.yaml
+minikube stop
+
+פקודות
+git checkout -b commands
+git push -u origin commands
+touch commands.txt COMMANDS.md
+git add commands.txt COMMANDS.md
+git commit -m "Implement commands.txt"
+git push origin commands
+
+צילום מסך
+git checkout -b screenshot
+git push -u origin screenshot
+touch SCREENSHOT.md
+הוספת התמונה לתקייה
+git add screenshot.png SCREENSHOT.md
+git commit -m "Implement screenshot.png"
+git push origin screenshot
+
+מיזוג
+git checkout main
+git merge <branch name>
+git push
+
+
+
+
+
+
+
+
+
+
