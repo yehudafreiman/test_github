@@ -1,0 +1,1 @@
+Image of the browser running the application including the url line
