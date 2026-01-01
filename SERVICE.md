@@ -1,0 +1,1 @@
+Creates an access point to the pod using the name of the pod instead of an ip address that can change depending on when the pod crashes
